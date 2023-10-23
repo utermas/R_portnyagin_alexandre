@@ -34,7 +34,7 @@ scatter_plot <- plot_ly(data = df, x = ~Age, y = ~Income, mode = "markers", type
 scatter_plot <- layout(scatter_plot, xaxis = list(title = "Age"), yaxis = list(title = "Income"), title = "Точечный график Age vs. Income")
 scatter_plot
 
-labels <- c("Категория 1", "Категория 2", "Категория 3")
+labels <- c("cat 1", " cat2", "cat 3")
 values <- c(30, 40, 50)
 tree_map_data <- data.frame(
   labels = labels,
@@ -45,12 +45,12 @@ tree_map <- plot_ly(data = tree_map_data, ids = ~labels, labels = ~labels, paren
 tree_map <- layout(tree_map, title = "Карта-дерево")
 tree_map
 
-voronezh_lat <- 51.661535
-voronezh_lon <- 39.200287
-voronezh_map <- leaflet() %>%
+Moscow_lat <- 55.754079
+Moscow_lon <- 37.620037
+Moscow_map <- leaflet() %>%
   addTiles() %>%
-  addMarkers(lat = voronezh_lat, lng = voronezh_lon, popup = "Воронеж")
-voronezh_map
+  addMarkers(lat = Moscow_lat, lng = Moscow_lon, popup = "Москва")
+Moscow_map
 
 
 print(datatable(df))
